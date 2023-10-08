@@ -1,0 +1,17 @@
+title: [Project Name]
+remote_theme: just-the-docs/just-the-docs
+mermaid:
+  version: "10.5.0" # Pick version from https://cdn.jsdelivr.net/npm/mermaid/
+callouts:
+  tip:
+    title: 🤍 Tip
+    color: purple
+  info:
+    title: ℹ️ Info
+    color: blue
+  attention:
+    title: ❕ Attention
+    color: yellow
+  download:
+    title: 💾 Download
+    color: grey-dk
