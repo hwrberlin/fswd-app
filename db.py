@@ -31,7 +31,7 @@ def init_db():
     with current_app.open_resource('sql/create_tables.sql') as f:
         db_con.executescript(f.read().decode('utf8'))
     click.echo('Database has been initialized.')
-	
+
 def insert_sample():
     db_con = get_db_con()
     with current_app.open_resource('sql/insert_sample.sql') as f:
