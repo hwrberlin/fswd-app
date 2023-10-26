@@ -18,8 +18,6 @@ nav_order: 1
 
 ## [The problem]
 
-I want to create an app, but don't know how to do it.
-
 ## [Our solution]
 
 ## [Target user]
