@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block HEADER %}
+    <h2>{% block TITLE %}To-do "{{ todo.description }}"{% endblock %}</h2>
+{% endblock %}
+
+{% block CONTENT %}
+<form action="{{ url_for('todo', id=todo.id) }}" onsubmit="submitForm(event,this,'PATCH')">
+    <input type="checkbox" name="complete" id="{{ todo.id }}"
+        {% if todo.complete %} checked {% endif %}
+    >
+    <input type="text" name="description" value="{{ todo.description }}">
+    <select name="list_id">
+        <option value="0" label="List?">
+        {% for list in lists %}
+        <option value="{{ list.id }}" label="{{ list.name }}"
+            {% if todo.list_id == list.id %} selected {% endif %}
+        >
+        {% endfor %}
+    </select>
+    <input type="submit" value="u">
+</form>
+<form action="{{ url_for('todo', id=todo.id) }}" onsubmit="submitForm(event,this,'DELETE')">
+    <input type="submit" value="x">
+</form>
+<script>
+    function submitForm(event, form, method) {
+        fetch(form.action, {method:method, body: new FormData(form)});
+        event.preventDefault();
+        if (method == 'DELETE') {
+            setTimeout(function(){window.location.href = "{{ url_for('todos') }}";},10);
+        } else {
+            setTimeout(function(){window.location.reload();},10);
+        }
+    }
+</script>
+{% endblock %}

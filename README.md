@@ -7,18 +7,19 @@ The commit history on the `main` branch has been enriched with [tags](https://gi
 I recommend you `git checkout` the repository at the tagged location of a particular notebook:
 
 + `git checkout docs`: basic structure for your own documentation
-+ `git checkout intro`: "[Intro to full-stack web development with Flask](https://hwrberlin.github.io/fswd/02-fswd-intro.html)"
++ `git checkout intro`: "[Intro to full-stack web development with Flask](https://hwrberlin.github.io/fswd/fswd-intro.html)"
++ `git checkout flask`: "[Flask framework: URL path routing deep dive](https://hwrberlin.github.io/fswd/flask.html)"
 + *... more to come*
 
 > By checking out a particular tag, git will throw you a "detached HEAD" warning. This is a feature not a bug :) Consult the [git manual](https://git-scm.com/book/en/v2/Git-Basics-Tagging) for how to work around this warning, if you are so inclined.
 > 
 > Alternatively, you may revert to the latest commit with `git reset --hard`: this is a destructive command, deleting any local changes you may have done. Be sure to preserve them at some other location if you need them later.
 
-In addition to exemplary code, this repository contains a basic structure for your documentation page in the `📁/docs` folder, as a source to GitHub Pages. For setup instructions, see [this notebook](https://hwrberlin.github.io/fswd/04-git.html#5-github-pages).
+In addition to exemplary code, this repository contains a basic structure for your documentation page in the `📁/docs` folder, as a source to GitHub Pages. For setup instructions, see [this notebook](https://hwrberlin.github.io/fswd/git.html#5-github-pages).
 
 # Steps to execute the app
 
-**Step 1:** set up and activate a [Python Virtual Environment](https://hwrberlin.github.io/fswd/01-python-vscode.html#32-use-the-python-virtual-environment-as-default-for-this-workspace).
+**Step 1:** set up and activate a [Python Virtual Environment](https://hwrberlin.github.io/fswd/python-vscode.html#32-use-the-python-virtual-environment-as-default-for-this-workspace).
 
 **Step 2:** install the required Python packages from the terminal with the command `pip install -r requirements.txt`:
 

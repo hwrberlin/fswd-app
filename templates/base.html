@@ -10,6 +10,8 @@
 <nav>
     <h1>To-Do App</h1>
     <a href="{{ url_for('lists') }}">Lists</a>
+    &nbsp;|&nbsp; 
+    <a href="{{ url_for('todos') }}">Todos</a>
 </nav>
 <section class="content">
     <header>{% block HEADER %}{% endblock %}</header>
