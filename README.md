@@ -9,6 +9,7 @@ I recommend you `git checkout` the repository at the tagged location of a partic
 + `git checkout docs`: basic structure for your own documentation
 + `git checkout intro`: "[Intro to full-stack web development with Flask](https://hwrberlin.github.io/fswd/fswd-intro.html)"
 + `git checkout flask`: "[Flask framework: URL path routing deep dive](https://hwrberlin.github.io/fswd/flask.html)"
++ `git checkout html+css`: "[Introduction to HTML an CSS](https://hwrberlin.github.io/fswd/html-css.html)"
 + *... more to come*
 
 > By checking out a particular tag, git will throw you a "detached HEAD" warning. This is a feature not a bug :) Consult the [git manual](https://git-scm.com/book/en/v2/Git-Basics-Tagging) for how to work around this warning, if you are so inclined.
