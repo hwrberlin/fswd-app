@@ -40,7 +40,7 @@ For a quick reference of the markdown syntax, visit [this page](https://github.c
 {: .attention }
 > This is an attention callout.
 
-> {: .download }
+{: .download }
 > This is a download callout.
 
 ## Labels
