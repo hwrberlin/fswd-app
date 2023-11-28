@@ -11,7 +11,7 @@ I recommend you `git checkout` the repository at the tagged location of a partic
 + `git checkout flask`: "[Flask framework: URL path routing deep dive](https://hwrberlin.github.io/fswd/flask.html)"
 + `git checkout html+css`: "[Introduction to HTML an CSS](https://hwrberlin.github.io/fswd/html-css.html)"
 + `git checkout ui`: "[User interfaces with WTForms and Bootstrap](https://hwrberlin.github.io/fswd/user-interfaces.html)"
-+ *... more to come*
++ `git checkout sqlalchemy`: "[Relational databases with Flask-SQLAlchemy](https://hwrberlin.github.io/fswd/sqlalchemy.html)"
 
 > By checking out a particular tag, git will throw you a "detached HEAD" warning. This is a feature not a bug :) Consult the [git manual](https://git-scm.com/book/en/v2/Git-Basics-Tagging) for how to work around this warning, if you are so inclined.
 > 
@@ -31,7 +31,7 @@ In addition to exemplary code, this repository contains a basic structure for yo
 
 > I created the file `📄requirements.txt` with this command: `pip freeze > requirements.txt`
 
-**Step 3:** initialize the app's SQLite database via `flask init-db`:
+**Step 3** *(optional at tag location `sqlalchemy`)*: initialize the app's SQLite database via `flask init-db`:
 
 ```console
 (venv) PS C:\Users\me\projects\webapp> flask init-db
