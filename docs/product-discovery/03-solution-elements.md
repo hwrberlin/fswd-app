@@ -1,6 +1,6 @@
 ---
 title: Solution Elements
-parent: Design Decisions
+parent: Product Discovery
 nav_order: 3
 ---
 

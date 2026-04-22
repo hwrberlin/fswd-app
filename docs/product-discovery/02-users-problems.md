@@ -1,6 +1,6 @@
 ---
 title: Target Users + Problems
-parent: Design Decisions
+parent: Product Discovery
 nav_order: 2
 ---
 

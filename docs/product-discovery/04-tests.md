@@ -1,6 +1,6 @@
 ---
 title: Tests
-parent: Design Decisions
+parent: Product Discovery
 nav_order: 4
 ---
 

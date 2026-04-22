@@ -1,6 +1,6 @@
 ---
 title: Design Challenge
-parent: Design Decisions
+parent: Product Discovery
 nav_order: 1
 ---
 
