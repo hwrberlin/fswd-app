@@ -19,7 +19,7 @@ I recommend you `git switch` to the particular branch alongside a notebook:
 > 
 > The last-resort "hard reset" command is `git reset --hard`: this is a destructive command, deleting any local changes you may have done. Be sure to preserve them at some other location if you need them later. But you will end up with a clean copy of the remote repository.
 
-The recommended documentation structure lived in hte `📁/docs` folder, as a source to GitHub Pages. For setup instructions, see [this notebook](https://hwrberlin.github.io/fswd/git.html#5-github-pages).
+The recommended documentation structure lives in the `📁/docs` folder, as a source for GitHub Pages. For setup instructions, see [this notebook](https://hwrberlin.github.io/fswd/git.html#5-github-pages).
 
 # Setup steps to run the app
 
