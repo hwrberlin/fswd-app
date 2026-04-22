@@ -6,12 +6,13 @@ nav_order: 99
 {: .label .label-red }
 [to be deleted]
 
-{: .attention}
+{: .attention }
 > Once you are familiar with the available UI components of this template, exclude this page by changing `nav_order: 99` to `nav_exclude: true` on top of this page (line 3). Its *front matter* will then look like this:
 > ```
 > ---
 > title: UI Components
 > nav_exclude: true
+> nav_order: 99
 > ---
 > ```
 
@@ -24,10 +25,10 @@ For a quick reference of the markdown syntax, visit [this page](https://github.c
 ## Images
 
 ```markdown
-![get_list_todos_sample](assets/images/fswd-intro_02.png)
+![get_list_todos_sample](assets/images/fswd-intro_00.png)
 ```
 
-![get_list_todos_sample](assets/images/fswd-intro_02.png)
+![get_list_todos_sample](assets/images/fswd-intro_00.png)
 
 ## Callouts
 
@@ -40,7 +41,7 @@ For a quick reference of the markdown syntax, visit [this page](https://github.c
 {: .attention }
 > This is an attention callout.
 
-{: .download }
+> {: .download }
 > This is a download callout.
 
 ## Labels
