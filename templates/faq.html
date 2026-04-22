@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang=en>
+    <head>
+        <title>FAQ - To-Do App</title>
+        {% if css != 'none' %}
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Donegal+One|Palanquin">
+        <link rel="stylesheet" href="../static/css/reset.css">
+        <link rel="stylesheet" href="../static/css/colors.css">
+        {% if css == 'alt' %}
+        <link rel="stylesheet" href="../static/css/colors_alt.css">
+        {% endif %}
+        <link rel="stylesheet" href="../static/css/style_faq.css">
+        {% endif %}
+    </head>
+
+    <body>
+
+        <header>
+            <h1>To-Do App</h1>
+            <nav>
+                <a href="{{ url_for('index') }}">Demo</a> | 
+                <a href="{{ url_for('faq') }}">FAQ</a> | 
+                <a href="#">Register</a>
+            </nav>
+        </header>
+
+        <main>
+            <h2>Frequently Asked Questions</h2>
+            <div class="left">
+                <div class="faq">
+                    <input type="checkbox"><span></span>
+                    <h3>How many to-do items may I add per account?</h3>
+                    <div>
+                        <p>You can add an unlimited number of to-dos. If you need to organize your to-dos
+                            in multiple lists, you will need to get the <em>Premium Plan</em>, however.</p>
+                    </div>
+                </div>
+                <div class="faq">
+                    <input type="checkbox"><span></span>
+                    <h3>Can I share to-dos with friends and co-workers?</h3>
+                    <div>
+                        <p>Yes, you can share any to-do with other people, e.g., to assign a task to that person.
+                            The only prerequisite: they will need their own account. Registering takes less than 10 seconds!</p>
+                    </div>
+                </div>
+                <div class="faq">
+                    <input type="checkbox"><span></span>
+                    <h3>What are the exclusive <em>Premium Plan</em> features?</h3>
+                    <div>
+                        <p><em>Premium Plan</em> helps you become the best version of you:</p>
+                        <ul>
+                            <li>Set reminders, with optional phone alerts</li>
+                            <li>Organize to-dos in multiple lists, like family, life, work</li>
+                            <li>Seamless integration with ChatGPT: let the AI execute most tasks</li>
+                            <li>... and so many more</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="faq">
+                    <input type="checkbox"><span></span>
+                    <h3>How do I reset my password?</h3>
+                    <div>
+                        <p>Click "forgot password" from the login page or "change password" from your profile page.
+                            A reset link will be emailed to you.</p>
+                    </div>
+                </div>
+                <div class="faq">
+                    <input type="checkbox"><span></span>
+                    <h3>Do you provide any additional support?</h3>
+                    <div>
+                        <p>Chat and email support is available on best effort basis. <em>Premium Plan</em>
+                            customers get support 24/7 with 30min guaranteed response time.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <img src="../static/images/undraw-to-do.png" alt="illustration of a to-do list">
+            </div>
+        </main>
+
+        <footer>
+            <div class="container">
+                <div class="left">
+                    <h4>Contact</h4>
+                    <p id="company">To-Do App UG</p>
+                    <p>Badensche Str. 52<br>
+                        D-10825 Berlin</p>
+                </div>
+                <div class="right">
+                    <h4>Info</h4>
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Imprint</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+
+    </body>
+</html>

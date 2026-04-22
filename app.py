@@ -122,3 +122,18 @@ def http_not_found(e):
 @app.errorhandler(500)
 def http_internal_server_error(e):
     return render_template('500.html'), 500
+
+@app.get('/faq/<css>') # /faq/alt: alternative colors; /faq/none: no css applied
+@app.get('/faq/', defaults={'css': 'default'})
+def faq(css):
+    return render_template('faq.html', css=css)
+
+@app.get('/ex/<int:id>')
+@app.get('/ex/', defaults={'id':1})
+def ex(id):
+    if id == 1:
+        return render_template('ex1.html')
+    elif id == 2:
+        return render_template('ex2.html')
+    else:
+        abort(404)
