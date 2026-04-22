@@ -1,35 +1,46 @@
 import os
-from flask import Flask, render_template, redirect, url_for, request, abort
-import db
+from flask import Flask, render_template, redirect, url_for, request, abort, flash
+from flask_bootstrap import Bootstrap5
+import db, forms
 
 app = Flask(__name__)
 
 app.config.from_mapping(
     SECRET_KEY='secret_key_just_for_dev_environment',
-    DATABASE=os.path.join(app.instance_path, 'todos.sqlite')
+    DATABASE=os.path.join(app.instance_path, 'todos.sqlite'),
+    BOOTSTRAP_BOOTSWATCH_THEME = 'pulse'
 )
 app.cli.add_command(db.init_db)
 app.teardown_appcontext(db.close_db_con)
 
+bootstrap = Bootstrap5(app)
+
 @app.route('/')
 @app.route('/index')
 def index():
-    return redirect(url_for('lists'))
+    return redirect(url_for('todos'))
 
 @app.route('/todos/', methods=['GET', 'POST'])
 def todos():
     db_con = db.get_db_con()
+    form = forms.CreateTodoForm()
     if request.method == 'GET':
         sql_query = 'SELECT * FROM todo ORDER BY id;'
         todos = db_con.execute(sql_query).fetchall()
-        return render_template('todos.html', todos=todos)
+        return render_template('todos.html', todos=todos, form=form)
     else:  # request.method == 'POST'
-        sql_query = 'INSERT INTO todo (description) VALUES (?);'
-        db_con.execute(sql_query, [request.form.get('description')])
-        db_con.commit()
+        if form.validate():
+            sql_query = 'INSERT INTO todo (description) VALUES (?);'
+            db_con.execute(sql_query, [form.description.data])
+            db_con.commit()
+            flash('Todo has been created.', 'success')
+            print('Todo has been created.')
+        else:
+            flash('No todo creation: validation error.', 'warning')
+            print('No todo creation: validation error.')
         return redirect(url_for('todos'))
 
-@app.route('/todos/<int:id>', methods=['GET', 'PATCH', 'DELETE'])
+@app.route('/todos/<int:id>', methods=['GET', 'POST'])
 def todo(id):
     db_con = db.get_db_con()
     if request.method == 'GET':
@@ -42,29 +53,38 @@ def todo(id):
         )
         todo = db_con.execute(sql_query, [id, id]).fetchone()
         if todo:
+            form = forms.TodoForm(data=todo)
             sql_query = 'SELECT id, name FROM list ORDER BY name;'
-            lists = db_con.execute(sql_query).fetchall()
-            return render_template('todo.html', todo=todo, lists=lists)
+            choices = db_con.execute(sql_query).fetchall()
+            form.list_id.choices = [(0, 'List?')] + [(c['id'], c['name']) for c in choices]
+            return render_template('todo.html', form=form)
         else:
             abort(404)
-    elif request.method == 'PATCH':
-        complete = bool(request.form.get('complete'))
-        description = request.form.get('description')
-        list_id = int(request.form.get('list_id'))
-        sql_query = 'UPDATE todo SET complete = ?, description = ? WHERE id = ?;'
-        db_con.execute(sql_query, [complete, description, id])
-        sql_query = 'DELETE FROM todo_list WHERE todo_id = ?;'
-        db_con.execute(sql_query, [id])
-        if list_id:
-            sql_query = 'INSERT INTO todo_list (todo_id, list_id) VALUES (?, ?);'
-            db_con.execute(sql_query, [id, list_id])
-        db_con.commit()
-        return redirect(url_for('todo', id=id))
-    else:  # request.method == 'DELETE'
-        sql_query = 'DELETE FROM todo WHERE id = ?;'
-        db_con.execute(sql_query, [id])
-        db_con.commit()
-        return redirect(url_for('todos'), 303)
+    else: # request.method == 'POST'
+        form = forms.TodoForm()
+        if form.method.data == 'PATCH':
+            if form.validate():
+                sql_query = 'UPDATE todo SET complete = ?, description = ? WHERE id = ?;'
+                db_con.execute(sql_query, [form.complete.data, form.description.data, id])
+                sql_query = 'DELETE FROM todo_list WHERE todo_id = ?;'
+                db_con.execute(sql_query, [id])
+                if form.list_id.data:
+                    sql_query = 'INSERT INTO todo_list (todo_id, list_id) VALUES (?, ?);'
+                    db_con.execute(sql_query, [id, form.list_id.data])
+                db_con.commit()
+                flash('Todo has been updated.', 'success')
+            else:
+                flash('No todo update: validation error.', 'warning')
+            return redirect(url_for('todo', id=id))
+        elif form.method.data == 'DELETE':
+            sql_query = 'DELETE FROM todo WHERE id = ?;'
+            db_con.execute(sql_query, [id])
+            db_con.commit()
+            flash('Todo has been deleted.', 'success')
+            return redirect(url_for('todos'), 303)
+        else:
+            flash('Nothing happened.', 'info')
+            return redirect(url_for('todo', id=id))
 
 @app.route('/lists/')
 def lists():

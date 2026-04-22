@@ -1,22 +1,46 @@
+{% from 'bootstrap5/nav.html' import render_nav_item %}
+{% from 'bootstrap5/utils.html' import render_messages %}
+
 <!doctype html>
 <html lang=en>
 
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block TITLE %}{% endblock %} - To-Do App</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    {{ bootstrap.load_css() }}
 </head>
 
 <body>
-<nav>
-    <h1>To-Do App</h1>
-    <a href="{{ url_for('lists') }}">Lists</a>
-    &nbsp;|&nbsp; 
-    <a href="{{ url_for('todos') }}">Todos</a>
-</nav>
-<section class="content">
+<div class="container border shadow w-50 pb-3 my-3">
+
+    <nav class="navbar navbar-expand-xl border-bottom mb-3">
+        <div class="container-fluid px-0">
+            <a class="navbar-brand" href="{{ url_for('index') }}">To-Do App</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" 
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    {{ render_nav_item('todos', 'Todos') }}
+                    {{ render_nav_item('lists', 'Lists') }}
+                </ul>
+            </div>
+        </div>
+    </nav>
+
     <header>{% block HEADER %}{% endblock %}</header>
-    {% block CONTENT %}{% endblock %}
-</section>
+
+    <main>
+        {{ render_messages(dismissible=True, dismiss_animate=True) }}
+        {% block CONTENT %}{% endblock %}
+    </main>
+
+</div>
+{{ bootstrap.load_js() }}
 </body>
 
 </html>

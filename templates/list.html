@@ -5,16 +5,14 @@
 {% endblock %}
 
 {% block CONTENT %}
-<ul>
 {% for todo in list.todos %}
-<li>
-    <input type="checkbox" disabled=disabled id="{{ todo.id }}"
-        {% if todo.complete %} checked {% endif %}
-    >
-    <label for="{{ todo.id }}">
+<div class="form-check">
+    <label class="form-check-label" for="{{ todo.id }}">
         <a href="{{ url_for('todo', id=todo.id) }}">{{ todo.description }}</a>
     </label>
-</li>
+    <input class="form-check-input" type="checkbox" id="{{ todo.id }}" disabled
+        {% if todo.complete %} checked {% endif %}
+    >
+</div>
 {% endfor %}
-</ul>
 {% endblock %}

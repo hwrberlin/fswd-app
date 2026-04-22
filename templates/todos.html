@@ -5,20 +5,20 @@
 {% endblock %}
 
 {% block CONTENT %}
-<ul>
 {% for todo in todos %}
-<li>
-    <input type="checkbox" disabled=disabled id="{{ todo.id }}"
-        {% if todo.complete %} checked {% endif %}
-    >
-    <label for="{{ todo.id }}">
+<div class="form-check">
+    <label class="form-check-label" for="{{ todo.id }}">
         <a href="{{ url_for('todo', id=todo.id) }}">{{ todo.description }}</a>
     </label>
-</li>
+    <input class="form-check-input" type="checkbox" id="{{ todo.id }}" disabled
+        {% if todo.complete %} checked {% endif %}
+    >
+</div>
 {% endfor %}
-</ul>
-<form action="{{ url_for('todos') }}" method="post">
-    <input type="text" name="description" />
-    <input type="submit" value="Create" />
+<form action="{{ url_for('todos') }}" method="post"
+    class="row row-cols-auto g-2 pt-3">
+    {{ form.csrf_token }}
+    <div class="col">{{ form.description(class='form-control') }}</div>
+    <div class="col">{{ form.submit(class='btn btn-primary') }}</div>
 </form>
 {% endblock %}
