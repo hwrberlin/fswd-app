@@ -50,22 +50,22 @@ Mir ist weiterhin bewusst, dass ich, sofern ich zur Erstellung dieser Arbeit KI-
 ## Top-3 Contributions
 
 | \# | My contribution | Why I am proud of it | Which challenge I overcame |
-| --- | --- | --- | --- |
+| :-- | :-- | :-- | :-- |
 | 1 | [Describe your individual contribution] |  |  |
 | 2 |  |  |  |
 | 3 |  |  |  |
 
 ## Design Decisions that I led
 
-1. <../design-decisions/dd-00.md>
-2. <../design-decisions/dd-01.md>
+1. [DD #00](../design-decisions/dd-00.md)
+2. [DD #01](../design-decisions/dd-01.md)
 
 ---
 
 ## Contributions
 
 | Contribution | Proof, e.g., git commits | Sources used |
-| --- | --- | --- |
+| :-- | :-- | :-- |
 | [Design Challenge research] | [Research traces](01-design-challenge.md#raw-material) | See left |
 | [Refactor to use Flask Blueprints] | [Commit 1](https://github.com/hwrberlin/fswd/commit/d816e4), [Commit 2](https://github.com/hwrberlin/fswd/commit/75a6c1) | [Flask Documentation](https://flask.palletsprojects.com/en/stable/blueprints/#the-concept-of-blueprints) |
 |  |  |  |
@@ -79,7 +79,7 @@ Mir ist weiterhin bewusst, dass ich, sofern ich zur Erstellung dieser Arbeit KI-
 [You must maintain a comprehensive AI Directory, as per [FB1 Regulations on Generative AI Use](../assets/pdf/FB1_KI_Regelung_DE_ENG.pdf). "Catch-all" disclosure (like "AI Tool used for bugfixing") is generally not sufficient. You may list an *AI Tool* multiple times, e.g., if you have used it for different purposes / in different parts of your project. Any use of Agentic AI is **forbidden**.]
 
 | #   | AI Tool | Purpose of Use | Affected Sections (Code + Docs) | Remarks, Procedure, Prompts |
-| --- | ---     | ---            | ---                             | ---                         |
+| :-- | :--     | :--            | :--                             | :--                         |
 | 01  |         |                |                                 |                             |
 | 02  |         |                |                                 |                             |
 | ... |         |                |                                 |                             |

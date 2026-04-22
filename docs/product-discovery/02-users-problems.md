@@ -1,5 +1,6 @@
 ---
 title: Target Users + Problems
+parent: Design Decisions
 nav_order: 2
 ---
 

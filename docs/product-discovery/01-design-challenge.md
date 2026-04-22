@@ -1,5 +1,6 @@
 ---
 title: Design Challenge
+parent: Design Decisions
 nav_order: 1
 ---
 

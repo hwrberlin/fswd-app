@@ -1,5 +1,6 @@
 ---
 title: Solution Elements
+parent: Design Decisions
 nav_order: 3
 ---
 

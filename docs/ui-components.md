@@ -41,7 +41,7 @@ For a quick reference of the markdown syntax, visit [this page](https://github.c
 {: .attention }
 > This is an attention callout.
 
-> {: .download }
+{: .download }
 > This is a download callout.
 
 ## Labels
@@ -58,6 +58,9 @@ For a quick reference of the markdown syntax, visit [this page](https://github.c
 ## Mermaid.js
 
 ```mermaid
+%%{init: {
+  "theme": "dark"
+}}%%
 graph TD;
     A-->B;
     A-->C;
