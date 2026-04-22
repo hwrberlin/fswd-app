@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block HEADER %}
+    <h2>{% block TITLE %}To-dos on list "{{ list.name }}"{% endblock %}</h2>
+{% endblock %}
+
+{% block CONTENT %}
+<ul>
+{% for todo in list.todos %}
+<li>
+    <input type="checkbox" disabled=disabled id="{{ todo.id }}"
+        {% if todo.complete %} checked {% endif %}
+    >
+    <label for="{{ todo.id }}">{{ todo.description }}</label>
+</li>
+{% endfor %}
+</ul>
+{% endblock %}
