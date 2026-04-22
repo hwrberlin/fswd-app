@@ -1,0 +1,26 @@
+# TO-DO: replace with your Project Name
+title: Project Name
+
+# No need to change the following settings
+remote_theme: just-the-docs/just-the-docs
+
+timezone: Europe/Berlin
+
+mermaid:
+  version: "11.14.0" # Pick version from https://cdn.jsdelivr.net/npm/mermaid/
+
+color_scheme: dark
+
+callouts:
+  info:
+    title: ✅ Info
+    color: green
+  tip:
+    title: 💡 Tip
+    color: yellow
+  attention:
+    title: ❗ Attention
+    color: red
+  download:
+    title: 💾 Download
+    color: grey-lt
