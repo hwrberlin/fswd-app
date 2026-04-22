@@ -1,5 +1,6 @@
 ---
 title: UI Components
+nav_exclude: false
 nav_order: 99
 ---
 
@@ -16,11 +17,22 @@ nav_order: 99
 > ---
 > ```
 
-# UI components
+# UI Components
 
-The [Just the Docs documentation](https://just-the-docs.github.io/just-the-docs/docs/ui-components) details more UI components.
+The [Just the Docs documentation](https://just-the-docs.github.io/just-the-docs/docs/ui-components) details all available UI components.
 
-For a quick reference of the markdown syntax, visit [this page](https://github.com/just-the-docs/just-the-docs/blob/main/docs/index-test.md?plain=1).
+A few components you might find useful:
+
+## Labels
+
+{: .label }
+[Default label]
+
+{: .label .label-green }
+[Green label]
+
+{: .label .label-red }
+[Red label]
 
 ## Images
 
@@ -29,6 +41,12 @@ For a quick reference of the markdown syntax, visit [this page](https://github.c
 ```
 
 ![get_list_todos_sample](assets/images/fswd-intro_00.png)
+
+
+# Custom UI Components
+
+The following customized components have been defined in file `📄_config.yml`.
+
 
 ## Callouts
 
@@ -43,17 +61,6 @@ For a quick reference of the markdown syntax, visit [this page](https://github.c
 
 {: .download }
 > This is a download callout.
-
-## Labels
-
-{: .label }
-[Default label]
-
-{: .label .label-green }
-[Green label]
-
-{: .label .label-red }
-[Red label]
 
 ## Mermaid.js
 
