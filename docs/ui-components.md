@@ -66,7 +66,7 @@ The following customized components have been defined in file `📄_config.yml`.
 
 ```mermaid
 %%{init: {
-  "theme": "dark"
+  "theme": "neutral"
 }}%%
 graph TD;
     A-->B;
