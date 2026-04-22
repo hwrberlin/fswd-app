@@ -16,4 +16,4 @@ nav_order: 1
 
 [List / link / paste any material that you created or referenced while working on the **Design Challenge** definition.
 
-Ideally, put any material that you created on your own in the folder `📁 01-dc/` (e.g., a scribble as .png image file), and link it on this page.]
+Ideally, put any material that you created on your own in the folder `📁 docs/product-discovery/material/01-dc/` (e.g., a scribble as .png image file), and link it on this page.]

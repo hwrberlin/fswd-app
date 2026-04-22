@@ -10,4 +10,4 @@ nav_order: 2
 
 [List / link / paste any material that you created or referenced while working on identifying your **target user(s)** and their core **problem(s)**. 
 
-Ideally, put any material that you created on your own in the folder `📁 02-up/`, and link it on this page.]
+Ideally, put any material that you created on your own in the folder `📁 docs/product-discovery/material/02-up/`, and link it on this page.]
