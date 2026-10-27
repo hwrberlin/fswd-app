@@ -7,4 +7,4 @@
 - [00: Title](dd-00.md) (John Doe)
 - [01: How to access the database - SQL or SQLAlchemy](dd-01.md) (Jane Dane)
 
-**Imporant:** Indicate who leads each Design Decision by putting their full name in parenthesis.]
+**Important:** Indicate who leads each Design Decision by putting their full name in parenthesis.]
